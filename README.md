@@ -8,5 +8,11 @@ Sorry for my open-hearted text, but every word is **truth**.
 # Task 2: Selectors
 ## All the elements that are on the login page:
 
-Order Lists:
-Item 1Item 2Item 3
+| XPath's Elements            | 1 Selector                                     | 2 Selector                                            | 3 Selector                                                   |
+|-----------------------------|------------------------------------------------|-------------------------------------------------------|--------------------------------------------------------------|
+| *title_form*                | `//*[@id="__next"]/form/div/div[1]/h5`         | `//*[text()="Scouts Panel"]`                          | `//child::div/h5`                                            |
+| *login_form*                | `//*[@id="login"]`                             | `//input[@name="login"]`                              | `input[type="text"]`                                         | 
+| *password_form*             | `//*[@id="password"]`                          | `//*[text()="Password" or text()="Hasło"]`            | `input[type="password"]`                                     |
+| *remind_password_hyperlink* | `//*[@id="__next"]/form/div/div[1]/a`          | `//a[contains(@class, "MuiTypography-colorPrimary")]` | `//a[text()="Remind password" or text()="Przypomnij hasło"]` |
+| *language_select*           | `//*[@id="__next"]/form/div/div[2]/div/input`  | `//input[@value="en" or @value="pl"]`                 | `//input[@class="MuiSelect-nativeInput"]`                    |
+| *sign_in_button*            | `//*[@id="__next"]/form/div/div[2]/button`     | `//*[contains(@type, "submit")]`                      | `//child::div/button`                                        | 
