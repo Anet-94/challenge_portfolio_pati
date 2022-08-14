@@ -8,4 +8,5 @@ Sorry for my open-hearted text, but every word is **truth**.
 # Task 2: Selectors
 ## All the elements that are on the login page:
 
-First Header | Second Header———— | ————-Content from cell 1 | Content from cell 2Content in the first column | Content in the second column
+Order Lists:
+Item 1Item 2Item 3
