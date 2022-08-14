@@ -6,7 +6,7 @@ Nowadays, IT is a very popular sphere, so nothing strange that I am interested Q
 Sorry for my open-hearted text, but every word is **truth**.
 
 # Task 2: Selectors
-## All the elements that are on the login page:
+## Subtask 1: Searching for selectors on the login pageList all the elements that are on the login page
 
 | Elements                     | 1 Selector                                     | 2 Selector                                            | 3 Selector                                                   |
 |------------------------------|------------------------------------------------|-------------------------------------------------------|--------------------------------------------------------------|
