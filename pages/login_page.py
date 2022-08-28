@@ -5,6 +5,8 @@ class LoginPage(BasePage):
     login_field_xpath = "//*[@id='login']"
     password_field_xpath = "//*[@id='password']"
     sign_in_button_xpath = "//*[contains(@type, 'submit')]"
+    error_pass_xpath = "//*[contains(@class, 'MuiTypography-caption')]" #albo MuiTypography-colorError
+    error_pass_text = 'Identifier or password invalid.'
     login_url = ('https://scouts-test.futbolkolektyw.pl/en')
     expected_title = 'Scouts panel - sign in'
     title_of_box_xpath = '//child::div/h5'
@@ -20,5 +22,5 @@ class LoginPage(BasePage):
     def title_of_page(self):
         assert self.get_page_title(self.login_url) == self.expected_title
 
-    def compare_the_login_form_title(self, driver):
-        self.assert_element_text(driver, self.title_of_box_xpath, self.header_of_box)
+    def compare_the_login_form_title(self):
+        self.assert_element_text(self.title_of_box_xpath, self.header_of_box)
