@@ -3,6 +3,7 @@ import unittest
 
 from selenium import webdriver
 
+from pages.add_players_page import AddPlayersPage
 from pages.dashboard import Dashboard
 from pages.login_page import LoginPage
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
@@ -19,24 +20,21 @@ class TestLoginPage(unittest.TestCase):
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
         self.user_login = LoginPage(self.driver)
 
-    def test_log_in_title_of_page(self):
-        self.user_login.title_of_page()
-
-    def test_log_in_title_in_header(self):
-        self.user_login.compare_the_login_form_title()
-
-    def test_log_in_to_the_system(self):
+    def test_create_player(self):
         self.user_login.type_in_email('user01@getnada.com')
         self.user_login.type_in_password('Test-1234')
         self.user_login.press_the_sign_in_button()
         dashboard_page = Dashboard(self.driver)
         dashboard_page.title_of_page()
-
-    def test_negative_log_in_to_the_system(self):
-        self.user_login.type_in_email('user')
-        self.user_login.type_in_password('pass')
-        self.user_login.press_the_sign_in_button()
-        self.user_login.error_enter_the_login_form()
+        dashboard_page.press_the_add_player_button()
+        add_player = AddPlayersPage(self.driver)
+        add_player.type_in_name("Peter")
+        add_player.type_in_surname("Pan")
+        #add_player.type_in_leg("right")
+        add_player.type_in_age("29.08.1950")
+        add_player.type_in_position("captain")
+        add_player.press_the_submit_button()
+        add_player.toast_success_the_form()
 
     @classmethod
     def tearDown(self):

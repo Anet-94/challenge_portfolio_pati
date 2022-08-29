@@ -6,11 +6,11 @@ class LoginPage(BasePage):
     password_field_xpath = "//*[@id='password']"
     sign_in_button_xpath = "//*[contains(@type, 'submit')]"
     error_pass_xpath = "//*[contains(@class, 'MuiTypography-caption')]" #albo MuiTypography-colorError
-    error_pass_text = 'Identifier or password invalid.'
     login_url = ('https://scouts-test.futbolkolektyw.pl/en')
     expected_title = 'Scouts panel - sign in'
     title_of_box_xpath = '//child::div/h5'
     header_of_box = 'Scouts Panel'
+    language_select_button_xpath = '//input[@class="MuiSelect-nativeInput"]'
 
     def type_in_email(self, email):
         self.field_send_keys(self.login_field_xpath, email)
@@ -24,3 +24,6 @@ class LoginPage(BasePage):
 
     def compare_the_login_form_title(self):
         self.assert_element_text(self.title_of_box_xpath, self.header_of_box)
+
+    def error_enter_the_login_form(self):
+        self.visibility_of_element_located(self.error_pass_xpath)
