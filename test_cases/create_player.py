@@ -20,7 +20,7 @@ class TestLoginPage(unittest.TestCase):
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
         self.user_login = LoginPage(self.driver)
 
-    def test_create_player(self):
+    def test_TC5_create_player(self):
         self.user_login.type_in_email('user01@getnada.com')
         self.user_login.type_in_password('Test-1234')
         self.user_login.press_the_sign_in_button()
