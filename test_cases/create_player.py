@@ -30,7 +30,7 @@ class TestLoginPage(unittest.TestCase):
         add_player = AddPlayersPage(self.driver)
         add_player.type_in_name("Peter")
         add_player.type_in_surname("Pan")
-        #add_player.type_in_leg("right")
+        add_player.type_in_left_leg()
         add_player.type_in_age("29.08.1950")
         add_player.type_in_position("captain")
         add_player.press_the_submit_button()
