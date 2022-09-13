@@ -6,7 +6,7 @@ class LoginPage(BasePage):
     password_field_xpath = "//*[@id='password']"
     sign_in_button_xpath = "//*[contains(@type, 'submit')]"
     error_pass_xpath = "//*[contains(@class, 'MuiTypography-caption')]" #albo MuiTypography-colorError
-    login_url = 'https://scouts-test.futbolkolektyw.pl/en'
+    login_url = 'https://scouts.futbolkolektyw.pl/en/'
     expected_title = 'Scouts panel - sign in'
     title_of_box_xpath = '//child::div/h5'
     header_of_box = 'Scouts Panel'
